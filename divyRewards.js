@@ -24,14 +24,28 @@ you would give out the following rewards: [4, 3, 2, 1, 2, 3, 4, 5, 1, 2]
 */
 
 const divyRewards = list => {
-  let i = 0, j = 1;
-  let descending = false
-  while (j < list.length) {
-    if (list[j] < list[j - 1]) {
-      j++
-    } else {
+  let rewards = [];
 
-    }
+  function buildRewards(arr) {
+    if (arr.length < 1) return null;
+
+    let smallest = Math.min(...arr);
+    let idx = arr.indexOf(smallest);
+
+    let newSlice = addRewards(idx, arr)
+
+  }
+
+  buildRewards(list)
+  return rewards
+}
+
+const addRewards = (idx, arr) => {
+  let pojo = {};
+  let dec = true;
+  
+  while (!!dec) {
+    if ()
   }
 }
 
@@ -39,6 +53,7 @@ let Score = [8, 4, 2, 1, 3, 6, 7, 9, 5, 11];
 console.log(divyRewards(score));
 
 /*
+
 hint 1
 You could try iterating through the input list of scores and incrementing the
 number of rewards you give to each student if they have a greater score than
@@ -56,25 +71,18 @@ that are greater than both scores next to them.Find the local mins, and try
 until you reach local maxes, assigning(and incrementing) rewards as you go.
 
 **** Other Attempt *****
+
 const divyRewards = list => {
-  let rewards = [];
+  let i = 0, j = 1;
+  let descending = false
+  while (j < list.length) {
+    if (list[j] < list[j - 1]) {
+      j++
+    } else {
 
-  function expandOutward(arr) {
-    if (arr.length < 1) return null;
-
-    let smallest = Math.min(...arr);
-    let idx = arr.indexOf(smallest);
-
-    for (let i = idx - 1; i >= 0; i--) {
-      arr[i]
     }
-
-    for (let i = idx + 1; i >= 0; i--) {
-      arr[i]
-    }
-
-
   }
 }
+
 */
 
